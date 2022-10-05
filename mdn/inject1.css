@@ -1,10 +1,8 @@
-html:root {
+:root {
 	--base-font-size: 90% !important;
 	--base-font-size-rem: 0.9rem !important;
 	font-size: 14px !important;
 }
-
-/* mdn layout */
 
 .main-wrapper .sidebar {
 	padding-block: unset !important;
@@ -24,9 +22,6 @@ html:root {
 #nav-footer {
 	display: none !important;
 }
-.main-page-content > aside.metadata {
-	display: none !important;
-}
 
 .main-wrapper {
 	display: flex !important;
@@ -38,68 +33,109 @@ html:root {
 }
 
 .main-page-content {
+	display: grid;
+	grid-template-columns: [full-start] 1fr [middle-start] fit-content(45rem) [middle-end] 1fr [full-end];
+	grid-auto-rows: max-content;
+	grid-auto-flow: row;
 	overflow-x: auto;
-	display: block;
 	height: unset;
 	background: var(--background-primary);
+	padding-bottom: 2rem;
+	margin: 0;
 }
+/* main-page-content containers */
 .main-page-content section,
 .main-page-content .section-content {
 	display: contents;
 }
+/* main-page-content: all items */
 .main-page-content > *,
-.main-page-content section > *,
-.main-page-content .section-content > * {
-	flex: none;
-	width: 100%;
-	max-width: 40rem;
-	background: inherit;
+.main-page-content :where(section, .section-content) > * {
+	grid-column: middle;
 	padding-inline: 1rem;
 }
-
+/* specific items */
+.main-page-content > aside.metadata {
+	display: none;
+}
+.main-page-content .table-scroll { /*.main-page-content svg*/
+	width: unset;
+	grid-column: full;
+	max-width: 100%;
+	margin: auto;
+	background: inherit;
+}
+
+.main-page-content svg[viewBox="-1 -1 650 42"] {
+	grid-column: full;
+	transform: scale(-1.5, 1.5);
+	transform-origin: top;
+	width: 66%;
+	align-self: center;
+	
+}
+.main-page-content svg[viewBox="-1 -1 650 42"] text {
+    transform: scale(-1, 1);
+    transform-origin: center;
+    transform-box: fill-box;
+}
+#input_types + div iframe {
+	height: 30px !important;
+	padding: 1px !important;
+}
+
+.main-page-content .bc-legend {
+	display: none;
+}
+/* adjusting margins etc. */
 .main-page-content h1,
 .main-page-content h2, .main-page-content h2:first-of-type {
 	padding-inline: 0;
 	margin-block: 1rem 0.5rem;
 }
+.main-page-content h3 {
+	margin-top: 1rem;
+}
 .main-page-content h1 {
-	margin-block: 0 1rem;
+	margin-block: 1rem;
 }
 .main-page-content p,
 .main-page-content .section-content p:last-child {
 	margin-block: 0.5rem;
 }
-.main-page-content dl dt {
+.main-page-content dl:not(.bc-notes-list):not(.bc-legend-items-container) dt {
 	margin-top: 0.5rem;
+	font-size: 1.25em;
+	font-weight: bold;
 }
+.main-page-content dl:not(.bc-notes-list):not(.bc-legend-items-container) dt:before {
+	content: "★ ";
+}
+.main-page-content dl dt code a { /* fix mistake */
+	font-size: calc(1em / 0.9);
+}
+.main-page-content dl dt a:not(.button) {
+	color: var(--notecard-link-color); /* idk */
+	text-decoration-color: var(--text-link);
+}
+
 .main-page-content ol, .main-page-content ul {
-	margin-block: 0.5rem 1rem;
+	margin-block: 0;
+}
+.main-page-content ol li, .main-page-content ul li {
+	margin-block: 0.25;
 }
 .bc-legend-items-container {
 	margin-block: 0;
-}
-.standard-table {
-	
-}
-
-.main-page-content {
-	display: flex;
-	flex-flow: column;
-	align-items: center;
 }
 /*#browser_compatibility,
 #browser_compatibility ~ :not(section[aria-labelledby="see_also"]) {
 	order: -1;
 }*/
 
-.main-page-content .table-scroll {
-	padding-inline: 0 !important;
-	width: unset !important;
-	max-width: unset !important;
-	margin: 0 !important;
-	flex-shrink: 0 !important;
-	background: inherit !important;
-}
+
+
+
 
 .table-scroll-inner {
 	padding: 0 !important;

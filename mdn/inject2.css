@@ -37,9 +37,12 @@
 }
 
 /* fonts */
-.code-example, code, pre {
+code, pre {
 	font-family: 'cascadia mono';
-	font-size: 0.8rem;
+	font-size: 0.9em;
+}
+pre code { /* why do people do this */
+	font-size: unset;
 }
 
 .bcd-cell-text-wrapper {
