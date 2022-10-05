@@ -1,0 +1,13 @@
+{
+	"manifest_version": 2,
+	"name": "css inject",
+	"description": "ligma",
+	"version": "0",
+	
+	"permissions": [],
+	"content_scripts": [{
+		"matches": ["https://developer.mozilla.org/*"],
+		"run_at": "document_start",
+		"css": ["mdn/inject1.css", "mdn/inject2.css"]
+	}]
+}

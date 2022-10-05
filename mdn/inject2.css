@@ -1,0 +1,273 @@
+.icon {
+	--mask-size: contain;
+}
+.bc-table * {
+    contain: content;
+}
+/* mdn version dates */
+
+.bc-support .bcd-cell-text-wrapper {
+	display: flex;
+	flex-flow: column-reverse;
+	padding: 0.25rem 0rem;
+	padding-top: 0.7rem;
+	gap: 0;
+	min-height: 2.5rem;
+}
+.bc-support .bcd-cell-text-wrapper > .bcd-cell-text-copy {
+	text-align: center;
+}
+
+.bc-table td.bc-supports-no { background: pink; }
+.bc-table td.bc-supports-yes { background: #DFD; }
+.bc-table td.bc-supports-partial { background: #FFA; }
+.bc-table td.bc-supports-unknown { background: #DDD; }
+.bc-table td.bc-supports-preview { background: #CFF; }
+
+.bc-table td, .bc-table th, .bc-table {
+	border-color: #333;
+}
+
+.bcd-cell-icons {
+	display: none;
+}
+
+.bc-support {
+	line-height: 1;
+}
+
+/* fonts */
+.code-example, code, pre {
+	font-family: 'cascadia mono';
+	font-size: 0.8rem;
+}
+
+.bcd-cell-text-wrapper {
+	contain: none;
+}
+.bc-support .bc-version-label {
+	contain: none;
+}
+.bc-support .bc-version-label::after {
+	content: "\A" attr(title);
+	display: block;
+	position: absolute;
+	overflow: hidden;
+	color: blue;
+	text-align: left;
+	font-size: .7rem;
+	width: 6.7ch;
+	font-family: sans-serif;
+	font-feature-settings: "tnum";
+	word-wrap: normal;
+	left: .15rem;
+	top: -.7rem;
+}
+
+.bc-support .bc-version-label[title^="Released 2019-"]::after {
+    color: red;
+}
+.bc-support .bc-version-label[title^="Released 202"]::after {
+    color: red;
+}
+
+.bc-browser-edge .bc-version-label[title="Released 2020-01-15"]::after {
+    content: "Released always";
+    color: green;
+}
+.bcd-ons {
+	display: none;
+}
+.offscreen, .only-icon span {
+	display: none;
+}
+
+.bc-head-txt-label {
+	position: unset;
+	line-height: 3rem;
+	left: unset;
+	transform: unset;
+	writing-mode: sideways-lr;
+	padding-bottom: .25rem;
+}
+
+.bc-browsers th {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.icon, .bc-table-row-header .bc-icons .icon {
+	background: black;
+}
+
+/*.bc-browser-opera, .bc-browser-opera_android {
+	visibility: collapse;
+	position: absolute !important;
+}*/
+
+.icon {
+	mask-size: contain;
+}
+.icon.icon-chrome {
+	background: #880;
+}
+.icon.icon-edge {
+	background: #4A9;
+}
+.icon.icon-simple-firefox {
+	background: #F60;
+}
+.icon.icon-safari {
+	background: #5BD;
+}
+.icon.icon-nonstandard {
+	background: #C22 !important;
+}
+
+.bc-table td, .bc-table th {
+	overflow: hidden;
+	position: relative;
+	min-width: 3rem;
+}
+/* the original value was literally just wrong */
+.bc-table-row-header {
+    align-items: center;
+} 
+
+.bc-table tbody tr {
+	height: unset;
+}
+
+.bc-table thead td, .bc-table th {
+	width: unset;
+}
+
+@media screen and (min-width: 426px) {
+    .bc-table td, .bc-table th {
+        padding-inline: 2px;
+    }
+}
+
+section[aria-labelledby="try_it"] {
+	/*display:none;*/
+}
+
+.bc-table td.bc-support > button {
+	display: contents;
+}
+
+.bc-table td.bc-support {
+	vertical-align: bottom;
+}
+
+.bc-support .bcd-cell-text-wrapper > .bcd-cell-text-copy {
+	display: contents;
+}
+
+.bc-notes-list::before, .table-scroll-inner::after {
+	display: none;
+}
+.bc-notes-list {
+	margin-top: 0; margin-bottom: 0;
+}
+.bc-table .bc-supports, dl.bc-notes-list dd.bc-supports-dd {
+	margin-bottom: 0;
+}
+.bc-notes-list {
+	display: grid;
+	grid-template-columns: max-content auto;
+	margin-bottom: 0.375rem;
+}
+.bc-notes-wrapper {
+	display: contents;
+}
+.bc-notes-wrapper > dt.bc-supports {
+	grid-column: 1 / 2;
+	margin-top: 0.5rem !important;
+	margin-right: 0.25rem;
+	text-align: right;
+}
+.bc-notes-wrapper > .bc-supports-dd {
+	grid-column: 2 / 3;
+	align-self: end;
+}
+/*.bc-notes-list .bc-supports-dd .icon {
+	border: none;
+	mask-image: ;
+}*/
+.bc-supports .bc-browser-name {
+	display: unset;
+}
+.bc-notes-wrapper > dt.bc-supports .bc-icons {
+	display: contents;
+}
+.only-icon:not(.icon) {
+	display: contents;
+}
+.bc-notes-wrapper .bcd-cell-text-wrapper {
+	justify-content: flex-end;
+}
+
+
+table.bc-table, .bc-table tr > * {
+	border-collapse: collapse !important;
+	border-width: 1px !important;
+	background-clip: padding-box !important;
+}
+table.bc-table tr {
+	border-collapse: separate !important;
+}
+th.bc-browser {
+	border-left: var(--light-border);
+	border-right:  var(--light-border);
+	border-bottom: 1px solid #333;
+	border-top-style: none;
+}
+th.bc-platform {
+	border: none;
+}
+table.bc-table {
+	border-style: none;
+	--light-border: 1px solid silver;
+}
+tr > .bc-browser-safari {
+	border-right-color: #555;
+}
+tr > .bc-browser-chrome_android {
+	/*border-left-style:double;*/
+	border-left-color: #555;
+	/*border-left-width: 3px !important;*/
+}
+.bc-browsers > th:first-of-type {
+	border-left-color: #555;
+}
+.bc-browsers > th:last-of-type {
+	border-right-color: #555;
+}
+.bc-browsers > td {
+	border-style: none;
+}
+.bc-table tbody th {
+	border-top:  var(--light-border);
+	border-bottom: var(--light-border);
+	border-left: none;
+	text-align: right;
+	padding-right: 0.25rem;
+	max-width: 15rem;
+}
+.bc-table-row-header {
+	justify-content: flex-end;
+}
+.bc-table-row-header .bc-icons {
+	margin-top: 0;
+	margin-left: 0.3rem;
+}
+.bc-table tbody tr:not(:last-child) th {
+	border-bottom: none;
+}
+.bc-support[aria-expanded="true"] {
+    box-shadow: 0 -0px 8px 1px #0228 inset;
+}
+.bc-support[aria-expanded="true"]::after {
+	background: #FF0;
+}
