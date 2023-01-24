@@ -172,6 +172,7 @@ section[aria-labelledby="try_it"] {
 }
 .bc-notes-list {
 	margin-top: 0; margin-bottom: 0;
+	margin-left: 0.5rem;
 }
 .bc-table .bc-supports, dl.bc-notes-list dd.bc-supports-dd {
 	margin-bottom: 0;
@@ -186,13 +187,16 @@ section[aria-labelledby="try_it"] {
 }
 .bc-notes-wrapper > dt.bc-supports {
 	grid-column: 1 / 2;
-	margin-top: 0.5rem !important;
 	margin-right: 0.25rem;
 	text-align: right;
 }
 .bc-notes-wrapper > .bc-supports-dd {
 	grid-column: 2 / 3;
 	align-self: end;
+}
+.bc-notes-wrapper > dt.bc-supports,
+.bc-notes-wrapper > .bc-supports-dd:first-of-type {
+	margin-top: 0.5rem !important;
 }
 /*.bc-notes-list .bc-supports-dd .icon {
 	border: none;
@@ -208,6 +212,8 @@ section[aria-labelledby="try_it"] {
 	display: contents;
 }
 .bc-notes-wrapper .bcd-cell-text-wrapper {
+	display: flex;
+	flex-flow: row;
 	justify-content: flex-end;
 }
 
@@ -273,4 +279,9 @@ tr > .bc-browser-chrome_android {
 }
 .bc-support[aria-expanded="true"]::after {
 	background: #FF0;
+}
+
+
+.bc-icons {
+	display: flex;
 }

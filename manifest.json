@@ -9,5 +9,8 @@
 		"matches": ["https://developer.mozilla.org/*"],
 		"run_at": "document_start",
 		"css": ["mdn/inject1.css", "mdn/inject2.css"]
-	}]
+	}],
+	"browser_specific_settings": {
+		"gecko": {"id": "12-css@ralsei.cock"}
+	}
 }
